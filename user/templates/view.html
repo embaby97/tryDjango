@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>View</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" />
+</head>
+<body>
+    <table class="table table-striped table-bordered table-sm" >
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>email</th>
+                <th>dd</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        {% for user in users %}
+          <tr>
+                <td>{{user.f_name}}</td>
+                <td>{{user.l_name}}</td>
+                <td>{{user.email}}</td>
+                <td>action</td>
+              <td><a href="/edit/ {{user.id}}"><span class="btn btn-success">Edit</span></a></td>
+               <td><a href="/delete/ {{user.id}}"><span class="btn btn-danger">Delete</span></a></td>
+            </tr>
+        {% endfor %}
+    <tbodey>
+</body>
+</html>
